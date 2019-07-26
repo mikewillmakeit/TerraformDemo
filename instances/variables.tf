@@ -1,5 +1,5 @@
 variable "region" {
-  default     = "eu-west-1"
+  default     = "us-east-2"
   description = "AWS Region"
 }
 
@@ -16,7 +16,7 @@ variable "ec2_instance_type" {
 }
 
 variable "key_pair_name" {
-  default     = "myEC2Keypair"
+  default     = "mike"
   description = "Keypair to use to connect to EC2 Instances"
 }
 

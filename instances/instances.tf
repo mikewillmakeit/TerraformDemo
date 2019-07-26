@@ -148,7 +148,7 @@ data "aws_ami" "launch_configuration_ami" {
 }
 
 resource "aws_launch_configuration" "ec2_private_launch_configuration" {
-  image_id                    = "ami-09693313102a30b2c"
+  image_id                    = "ami-02f706d959cedf892"
   instance_type               = "${var.ec2_instance_type}"
   key_name                    = "${var.key_pair_name}"
   associate_public_ip_address = false
@@ -195,7 +195,7 @@ resource "aws_elb" "webapp_load_balancer" {
     "${data.terraform_remote_state.network_configuration.public_subnet_3_id}"
   ]
 
-  "listener" {
+  listener {
     instance_port = 80
     instance_protocol = "HTTP"
     lb_port = 80
@@ -221,7 +221,7 @@ resource "aws_elb" "backend_load_balancer" {
     "${data.terraform_remote_state.network_configuration.private_subnet_3_id}"
   ]
 
-  "listener" {
+  listener {
     instance_port     = 80
     instance_protocol = "HTTP"
     lb_port           = 80
