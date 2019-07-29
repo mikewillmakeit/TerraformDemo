@@ -4,36 +4,36 @@ variable "region" {
 }
 
 variable "vpc_cidr" {
-  default     = "10.0.1.0/24"
+  default     = "10.0.0.0/16"
   description = "VPC CIDR Block"
 }
 
 variable "public_subnet_1_cidr" {
-  default = "10.0.1.16/24"
+  default = "10.0.32.0/16"
   description = "Public Subnet 1 CIDR"
 }
 
 variable "public_subnet_2_cidr" {
-   default = "10.0.1.24/24"
+   default = "10.0.64.0/16"
   description = "Public Subnet 2 CIDR"
 }
 
 variable "public_subnet_3_cidr" {
-   default = "10.0.1.36/24"
+   default = "10.0.96.0/24"
   description = "Public Subnet 3 CIDR"
 }
 
 variable "private_subnet_1_cidr" {
-   default = "10.0.1.48/24"
+   default = "10.0.128.0/24"
   description = "Private Subnet 1 CIDR"
 }
 
 variable "private_subnet_2_cidr" {
-   default = "10.0.1.52/24"
+   default = "10.0.160.0/24"
   description = "Private Subnet 2 CIDR"
 }
 
 variable "private_subnet_3_cidr" {
-   default = "10.0.1.64/24"
+   default = "10.0.192.0/24"
   description = "Private Subnet 3 CIDR"
 }
