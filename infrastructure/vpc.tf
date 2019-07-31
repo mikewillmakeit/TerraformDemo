@@ -3,7 +3,11 @@ provider "aws" {
 }
 
 terraform {
-  backend "s3" {}
+  backend "s3" {
+    region ="us-east-2"
+    key = "layer1/infrastructure.tfstate"
+    bucket = "myterraformdemobucket"
+  }
 }
 
 resource "aws_vpc" "production-vpc" {
