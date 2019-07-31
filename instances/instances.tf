@@ -8,12 +8,9 @@ terraform {
 
 data "terraform_remote_state" "network_configuration" {
   backend = "s3"
-
-  config {
-    bucket = "${var.remote_state_bucket}"
-    key    = "${var.remote_state_key}"
-    region = "${var.region}"
-  }
+    region="us-east-2"
+    key="layer2/backend.tfstate"
+    bucket="myterraformdemobucket"
 }
 
 resource "aws_security_group" "ec2_public_security_group" {
