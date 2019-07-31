@@ -6,7 +6,7 @@ terraform {
   backend "s3" {
     region ="us-east-2"
     key = "layer1/infrastructure.tfstate"
-    bucket = "myterraformdemobucket"
+    bucket = "terraform-demo-7-31-2019"
   }
 }
 

@@ -10,7 +10,7 @@ data "terraform_remote_state" "network_configuration" {
   backend = "s3"
     region ="us-east-2"
     key = "layer2/backend.tfstate"
-    bucket = "myterraformdemobucket"
+    bucket = "terraform-demo-7-31-2019"
 }
 
 resource "aws_security_group" "ec2_public_security_group" {
