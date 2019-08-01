@@ -3,18 +3,17 @@ provider "aws" {
 }
 
 terraform {
-  backend "s3" {
-    region ="us-east-2"
-    key = "layer2/backend.tfstate"
-    bucket = "terraform-demo-7-31-2019"
-  }
+  backend "s3" {}
 }
 
 data "terraform_remote_state" "network_configuration" {
   backend = "s3"
-    region ="us-east-2"
-    key = "layer2/backend.tfstate"
-    bucket = "terraform-demo-7-31-2019"
+
+  config {
+    bucket = "${var.remote_state_bucket}"
+    key    = "${var.remote_state_key}"
+    region = "${var.region}"
+  }
 }
 
 resource "aws_security_group" "ec2_public_security_group" {
