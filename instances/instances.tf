@@ -3,7 +3,11 @@ provider "aws" {
 }
 
 terraform {
-  backend "s3" {}
+  backend "s3" {
+    region ="us-east-2"
+    key = "layer2/backend.tfstate"
+    bucket = "terraform-demo-7-31-2019"
+  }
 }
 
 data "terraform_remote_state" "network_configuration" {
